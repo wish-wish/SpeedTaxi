@@ -1,9 +1,10 @@
-import { _decorator, Component, Node, loader, Prefab, Vec3, macro } from 'cc';
+import { _decorator, Component, Node, resources, Prefab, Vec3, macro } from 'cc';
 import { Car } from './Car';
 import { RoadPoint } from './RoadPoint';
 import { PoolMgr } from '../data/PoolMgr';
 import { CustomEventListener } from '../data/CustomEventListener';
 import { Constants } from '../data/Constants';
+import { IPLayerInfo, RunTimeData } from '../data/GameData';
 const { ccclass, property } = _decorator;
 
 @ccclass('CarMgr')
@@ -38,9 +39,17 @@ export class CarMgr extends Component {
         }
     }
 
+    public logCameraInfo()
+    {
+        console.log("cameraPos:"+this.camera.position);
+        console.log("cameraRot:"+this.camera.rotation);
+    }
+
     private createMainCar(point:Node,isMain=false){
         //console.log(point.worldPosition);
         this.mainCar.setEntry(point,isMain);
+        var pi:IPLayerInfo;
+        pi=RunTimeData.instance().playerData.playerIno;
         this.mainCar.setCamera(this.camera,this.cameraPos,this.cameraRotation);
     }
 
@@ -82,7 +91,7 @@ export class CarMgr extends Component {
 
     private createEnemy(road:RoadPoint,carID:string){
         const self=this;
-        loader.loadRes('car/car'+carID,Prefab,(err:any,prefab:Prefab)=>{
+        resources.load('car/car'+carID,Prefab,(err:any,prefab:Prefab)=>{
             if(err){
                 console.warn(err);
                 return;

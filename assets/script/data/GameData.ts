@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ConstantForce } from 'cc';
+import { _decorator, Component, Node, ConstantForce, Vec3,ParticleSystemComponent, BoxColliderComponent, RigidBodyComponent, } from 'cc';
 import { ConfigMgr } from './ConfigMgr';
 import { Constants } from './Constants';
 const { ccclass, property } = _decorator;
@@ -30,15 +30,19 @@ export class RunTimeData {
     }
 }
 
-interface IPLayerInfo{
+export interface IPLayerInfo{
     money:number,
     level:number,
+    iscollider:boolean,
+    cameraPos:Vec3,
+    cameraRotation:number,
+    colliders:Array<RigidBodyComponent>,
 }
 
 @ccclass('PlayerData')
 export class PlayerData {
 
-    public playerIno:IPLayerInfo = {money:0,level:1};
+    public playerIno:IPLayerInfo = {money:0,level:1,iscollider:false,cameraPos:new Vec3(0.012,5.267,13.121),cameraRotation:-79,colliders:[]};
 
     static _instance:PlayerData = null;
     public static instance(){

@@ -78,18 +78,20 @@ export class GameCtrl extends Component {
 
     public newLevel(){
         UIMgr.hideDialog(Constants.UIPage.resultUI);
-        UIMgr.showDialog(Constants.UIPage.mainUI);
-        if(RunTimeData.instance().currProgress===RunTimeData.instance().maxProgress){
-            this.mapMgr.recycle();
-            //this.reset();
+        UIMgr.showDialog(Constants.UIPage.mainUI);        
+        if(RunTimeData.instance().currProgress===RunTimeData.instance().maxProgress
+            ||RunTimeData.instance().playerData.playerIno.iscollider){
+            RunTimeData.instance().playerData.playerIno.iscollider=false;
+            RunTimeData.instance().playerData.playerIno.colliders=[];
+            this.mapMgr.recycle();        
             this.unschedule(this.loadMap);
-            this.scheduleOnce(this.loadMap,0.01)
-            //this.loadMap(1);
+            this.scheduleOnce(this.loadMap,0.03);                        
         }
         else
-        {
+        {            
             this.reset();
         }
+
     }
 
     private touchStart(touch:Touch,event:EventTouch)

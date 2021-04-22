@@ -3,7 +3,7 @@ import { RoadPoint } from './RoadPoint';
 import { Constants } from '../data/Constants';
 import { CustomEventListener } from '../data/CustomEventListener';
 import { AudioMgr } from './AudioMgr';
-import { RunTimeData } from '../data/GameData';
+import { RunTimeData,IPLayerInfo } from '../data/GameData';
 const { ccclass, property } = _decorator;
 
 const tempVec = new Vec3();
@@ -108,7 +108,6 @@ export class Car extends Component {
                                 this.offset.z=this.pointB.z;
                             }
                         }
-                            
                     }else
                     {
                         //console.log("xmove");
@@ -391,19 +390,36 @@ export class Car extends Component {
         if(otherCollider.node.name==="groundcollider"){
             return;
         }
+        var playinfo:IPLayerInfo;
+        playinfo=RunTimeData.instance().playerData.playerIno;
+        playinfo.iscollider=true;
+        playinfo.cameraPos=this.camera.position;
+        playinfo.cameraRotation=this.camera.angle;
+
         const otherRigidbody=otherCollider.node.getComponent(RigidBodyComponent);
         otherRigidbody.useGravity = true;
         otherRigidbody.applyForce(new Vec3(0,3000,-1500),new Vec3(0,0.5,0));
-
+        
+        var rigidbodys:Array<RigidBodyComponent>;
+        rigidbodys=RunTimeData.instance().playerData.playerIno.colliders;   
+        if(rigidbodys===undefined)
+            rigidbodys=[];     
+        if(rigidbodys.indexOf(otherRigidbody)<0)//TODO:index of
+        {
+            rigidbodys.push(otherRigidbody);
+        }
         const collider=event.selfCollider;
         collider.addMask(Constants.CarGroup.NORMAL);
         const rigidBody = this.node.getComponent(RigidBodyComponent);
         rigidBody.useGravity=true;
+        if(rigidbodys.indexOf(rigidBody)<0)
+        {
+            rigidbodys.push(rigidBody);
+        }
         this.runState = RunState.CRASH;
         AudioMgr.playSound(Constants.AudioFiles.CRASH);
         CustomEventListener.dispatchEvent(Constants.EventName.GAMEOVER);
     }
-
 
     public stopImmediately(){
         this.isMoving=false;

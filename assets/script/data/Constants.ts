@@ -13,7 +13,7 @@ enum EventName{
     NEWLEVEL = 'newlevel',
     SHOWTALK = 'showtalk',
     SHOWGUIDE = 'showguide',
-    UPDATEPROGRESS = 'updateprogress',
+    UPDATEPROGRESS = 'updateprogress',    
 }
 
 enum AudioFiles{
