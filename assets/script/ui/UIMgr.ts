@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, find, loader, Prefab, InstanceMaterialType, instantiate } from 'cc';
+import { _decorator, Component, Node, find, loader,assetManager,resources, Prefab, InstanceMaterialType, instantiate } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('UIMgr')
@@ -21,8 +21,9 @@ export class UIMgr {
             }
             return;
         }
-        const path = `ui/${name}`;
-        loader.loadRes(path,Prefab,(err:any,prefab:Prefab)=>{
+        const path = `ui/${name}`;        
+        //loader.loadRes(path,Prefab,(err:any,prefab:Prefab)=>{
+        resources.load(path,Prefab,(err:any,prefab:Prefab)=>{
             if(err){
                 console.warn(err);
                 return;

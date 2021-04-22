@@ -17,7 +17,7 @@ export class CustomEventListener extends Component {
 
     public static on(eventName:string,cb:Function,target?:any){
         if(!this.handle[eventName]){
-            this.handle[eventName] = []; 
+            this.handle[eventName] = [];
         }
         const data:IEventData = {func:cb,target};
         this.handle[eventName].push(data);

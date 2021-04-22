@@ -1,4 +1,4 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, sys } from 'cc';
 import { Constants } from './Constants';
 const { ccclass, property } = _decorator;
 
@@ -15,8 +15,8 @@ export class ConfigMgr {
         return this._instance;
     }
 
-    public init(){
-        const localStorage = cc.sys.localStorage.getItem(Constants.GameConfigID);
+    public init(){        
+        const localStorage = sys.localStorage.getItem(Constants.GameConfigID);
         if(localStorage){
             this.jsonData = JSON.parse(localStorage);
         }
@@ -39,7 +39,7 @@ export class ConfigMgr {
             return;
         }
         const data = JSON.stringify(this.jsonData);
-        cc.sys.localStorage.setItem(Constants.GameConfigID,data);
+        sys.localStorage.setItem(Constants.GameConfigID,data);
         this.markSave = false;
     }
 }

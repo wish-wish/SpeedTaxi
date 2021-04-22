@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, LabelComponent, ConstantForce } from 'cc';
+import { _decorator, Component, Node, LabelComponent, ConstantForce,sys } from 'cc';
 import { CustomEventListener } from '../data/CustomEventListener';
 import { Constants } from '../data/Constants';
 import { RunTimeData } from '../data/GameData';
@@ -33,7 +33,8 @@ export class MainUI extends Component {
         }
         this.time = time;
         if(this.clickTime>3){
-            cc.sys.localStorage.removeItem(Constants.GameConfigID);
+            
+            sys.localStorage.removeItem(Constants.GameConfigID);
             this.clickTime = 0;
             console.log('clear cache');
         }

@@ -1,4 +1,5 @@
-import { _decorator, Component, Node, EventTouch, BoxColliderComponent, Vec3, loader, Prefab, instantiate } from 'cc';
+import { _decorator, Component, Node, EventTouch, BoxColliderComponent
+    ,setDisplayStats, Vec3, resources, Prefab, instantiate } from 'cc';
 import { MapMgr } from './MapMgr';
 import { CarMgr } from './CarMgr';
 import { AudioMgr } from './AudioMgr';
@@ -48,7 +49,7 @@ export class GameCtrl extends Component {
         const collider=this.group.getComponent(BoxColliderComponent);
         collider.setGroup(Constants.CarGroup.NORMAL);
         collider.setMask(-1);
-        cc.debug.setDisplayStats(false);
+        setDisplayStats(false);
     }
 
     start () {
@@ -129,7 +130,7 @@ export class GameCtrl extends Component {
         this.unschedule(this.loadingSchedule);
         this.scheduleOnce(this.loadingSchedule,0.2);
         //console.log("map load start:"+map);
-        loader.loadRes(map,Prefab,(err:any,prefab:Prefab)=>{
+        resources.load(map,Prefab,(err:any,prefab:Prefab)=>{
             if(err){
                 console.warn(err);
                 return;

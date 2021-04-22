@@ -59,8 +59,8 @@
         "mipfilter": "none",
         "premultiplyAlpha": false,
         "anisotropy": 1,
-        "isUuid": true,
-        "imageUuidOrDatabaseUri": "ac5fbf51-2776-4f9b-9953-efc9d4d6b64b@ad0ee"
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/model/plane/plane01.jpg"
       }
     },
     "e3825": {
@@ -100,6 +100,7 @@
     "imageMetas": [
       {
         "name": "plane01.jpg",
+        "remap": "db://assets/model/plane/plane01.jpg",
         "uri": "ac5fbf51-2776-4f9b-9953-efc9d4d6b64b@ad0ee"
       }
     ],

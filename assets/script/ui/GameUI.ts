@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, LabelComponent, SpriteComponent, SpriteFrame, loader, AnimationComponent } from 'cc';
+import { _decorator, Component, Node, LabelComponent, SpriteComponent, SpriteFrame, resources, AnimationComponent } from 'cc';
 import { RunTimeData } from '../data/GameData';
 import { CustomEventListener } from '../data/CustomEventListener';
 import { Constants } from '../data/Constants';
@@ -126,7 +126,7 @@ export class GameUI extends Component {
         this.content.string = str;
         this.talkNode.active = true;
         const path=`texture/head/head${customerID+1}/spriteFrame`;
-        loader.loadRes(path,SpriteFrame,(err:any,sp:SpriteFrame)=>{
+        resources.load(path,SpriteFrame,(err:any,sp:SpriteFrame)=>{
             if(err){
                 console.warn(err);
                 return;
