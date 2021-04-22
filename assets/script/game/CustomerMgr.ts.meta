@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.22",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "3c8a7928-0516-4333-ba5c-7717f071e1af",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "importAsPlugin": false,
+    "moduleId": "project:///assets/script/game/CustomerMgr.js",
+    "simulateGlobals": []
+  }
+}

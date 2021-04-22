@@ -1,0 +1,41 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "aeac3a69-f6d5-4b8a-adef-70d75373b502",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "aeac3a69-f6d5-4b8a-adef-70d75373b502@6c48a",
+      "displayName": "dailyImgLight",
+      "id": "6c48a",
+      "name": "texture",
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "aeac3a69-f6d5-4b8a-adef-70d75373b502"
+      }
+    }
+  },
+  "userData": {
+    "type": "texture",
+    "redirect": "aeac3a69-f6d5-4b8a-adef-70d75373b502@6c48a",
+    "hasAlpha": true
+  }
+}

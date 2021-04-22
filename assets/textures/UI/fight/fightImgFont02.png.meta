@@ -1,0 +1,75 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "bd17f5e4-8bbb-4b60-b567-44ebcb7e35a5",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "bd17f5e4-8bbb-4b60-b567-44ebcb7e35a5@6c48a",
+      "displayName": "fightImgFont02",
+      "id": "6c48a",
+      "name": "texture",
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "bd17f5e4-8bbb-4b60-b567-44ebcb7e35a5"
+      }
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "bd17f5e4-8bbb-4b60-b567-44ebcb7e35a5@f9941",
+      "displayName": "fightImgFont02",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "ver": "1.0.9",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 0,
+        "trimY": 5,
+        "width": 243,
+        "height": 114,
+        "rawWidth": 243,
+        "rawHeight": 124,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "bd17f5e4-8bbb-4b60-b567-44ebcb7e35a5@6c48a",
+        "atlasUuid": "",
+        "packable": true
+      }
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "redirect": "bd17f5e4-8bbb-4b60-b567-44ebcb7e35a5@f9941",
+    "hasAlpha": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.22",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "66ef154c-d32c-4a1d-8dc7-4cb69fd29c0b",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "importAsPlugin": false,
+    "moduleId": "project:///assets/script/game/RoadPoint.js",
+    "simulateGlobals": []
+  }
+}

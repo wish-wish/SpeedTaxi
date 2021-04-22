@@ -1,0 +1,78 @@
+{
+  "ver": "2.0.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "98d82f6d-ff34-43da-ada0-a1c8db9618bd",
+  "files": [],
+  "subMetas": {
+    "7f3dc": {
+      "importer": "gltf-animation",
+      "uuid": "98d82f6d-ff34-43da-ada0-a1c8db9618bd@7f3dc",
+      "displayName": "",
+      "id": "7f3dc",
+      "name": "walk.animation",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0.02,
+          "to": 0.6666666865348816
+        },
+        "events": []
+      }
+    },
+    "37ff8": {
+      "importer": "gltf-scene",
+      "uuid": "98d82f6d-ff34-43da-ada0-a1c8db9618bd@37ff8",
+      "displayName": "",
+      "id": "37ff8",
+      "name": "man01@walk.prefab",
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "animationImportSettings": [
+      {
+        "name": "walk",
+        "duration": 0.6666666865348816,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "walk",
+            "from": 0.02,
+            "to": 0.6666666865348816,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "98d82f6d-ff34-43da-ada0-a1c8db9618bd@37ff8",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "98d82f6d-ff34-43da-ada0-a1c8db9618bd@37ff8"
+      ]
+    },
+    "legacyFbxImporter": true
+  }
+}

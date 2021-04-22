@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.22",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "dd421623-53e7-4e10-818a-0af0d86e7b02",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "importAsPlugin": false,
+    "moduleId": "project:///assets/script/game/AudioMgr.js",
+    "simulateGlobals": []
+  }
+}

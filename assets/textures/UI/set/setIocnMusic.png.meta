@@ -1,0 +1,41 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "f441a9d5-c453-41c5-be07-109e2f935b48",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "f441a9d5-c453-41c5-be07-109e2f935b48@6c48a",
+      "displayName": "setIocnMusic",
+      "id": "6c48a",
+      "name": "texture",
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "f441a9d5-c453-41c5-be07-109e2f935b48"
+      }
+    }
+  },
+  "userData": {
+    "type": "texture",
+    "redirect": "f441a9d5-c453-41c5-be07-109e2f935b48@6c48a",
+    "hasAlpha": true
+  }
+}

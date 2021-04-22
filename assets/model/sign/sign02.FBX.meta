@@ -1,0 +1,124 @@
+{
+  "ver": "2.0.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd",
+  "files": [],
+  "subMetas": {
+    "b8a2d": {
+      "importer": "gltf-mesh",
+      "uuid": "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@b8a2d",
+      "displayName": "",
+      "id": "b8a2d",
+      "name": "Plane001.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "9defe": {
+      "importer": "gltf-embeded-image",
+      "uuid": "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@9defe",
+      "displayName": "",
+      "id": "9defe",
+      "name": "贴图 #8.image",
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "bc797": {
+      "importer": "texture",
+      "uuid": "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@bc797",
+      "displayName": "",
+      "id": "bc797",
+      "name": "贴图 #8.texture",
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@9defe"
+      }
+    },
+    "84e8a": {
+      "importer": "gltf-material",
+      "uuid": "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@84e8a",
+      "displayName": "",
+      "id": "84e8a",
+      "name": "Material #91.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "5b89f": {
+      "importer": "gltf-scene",
+      "uuid": "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@5b89f",
+      "displayName": "",
+      "id": "5b89f",
+      "name": "sign02.prefab",
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "贴图 #8",
+        "uri": "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@9defe"
+      }
+    ],
+    "redirect": "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@5b89f",
+    "assetFinder": {
+      "meshes": [
+        "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@b8a2d"
+      ],
+      "skeletons": [],
+      "textures": [
+        "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@bc797"
+      ],
+      "materials": [
+        "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@84e8a"
+      ],
+      "scenes": [
+        "fae7cd45-6119-4ff9-a647-d56cd8dcf0bd@5b89f"
+      ]
+    },
+    "legacyFbxImporter": true
+  }
+}

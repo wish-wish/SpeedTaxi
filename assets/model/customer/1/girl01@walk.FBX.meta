@@ -1,0 +1,78 @@
+{
+  "ver": "2.0.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "b209130e-7463-48f9-a92b-31c81cc811ce",
+  "files": [],
+  "subMetas": {
+    "7f3dc": {
+      "importer": "gltf-animation",
+      "uuid": "b209130e-7463-48f9-a92b-31c81cc811ce@7f3dc",
+      "displayName": "",
+      "id": "7f3dc",
+      "name": "walk.animation",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.6666666865348816
+        },
+        "events": []
+      }
+    },
+    "c4bc3": {
+      "importer": "gltf-scene",
+      "uuid": "b209130e-7463-48f9-a92b-31c81cc811ce@c4bc3",
+      "displayName": "",
+      "id": "c4bc3",
+      "name": "girl01@walk.prefab",
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "animationImportSettings": [
+      {
+        "name": "walk",
+        "duration": 0.6666666865348816,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "walk",
+            "from": 0,
+            "to": 0.6666666865348816,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "b209130e-7463-48f9-a92b-31c81cc811ce@c4bc3",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "b209130e-7463-48f9-a92b-31c81cc811ce@c4bc3"
+      ]
+    },
+    "legacyFbxImporter": true
+  }
+}

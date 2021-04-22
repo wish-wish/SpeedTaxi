@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.22",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "0f3c595b-0c23-4ea8-ad5e-bc399099dd8a",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "importAsPlugin": false,
+    "moduleId": "project:///assets/script/data/UpdateLabelValue.js",
+    "simulateGlobals": []
+  }
+}

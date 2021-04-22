@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.22",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "dbda5c61-9366-4a4f-a51a-dce4d59ddf4b",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "importAsPlugin": false,
+    "moduleId": "project:///assets/script/game/Car.js",
+    "simulateGlobals": []
+  }
+}
