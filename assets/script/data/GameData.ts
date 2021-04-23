@@ -21,6 +21,7 @@ export class RunTimeData {
     public currProgress:number = 0;
     public maxProgress:number = 0;
     public money:number = 0;
+    public interval:number=0;
     public isTakeOver = true;
     get currLevel(){
         return this.playerData.playerIno.level;
@@ -32,17 +33,17 @@ export class RunTimeData {
 
 export interface IPLayerInfo{
     money:number,
-    level:number,
-    iscollider:boolean,
+    level:number,    
     cameraPos:Vec3,
-    cameraRotation:number,
-    colliders:Array<RigidBodyComponent>,
+    cameraRotation:number,    
 }
 
 @ccclass('PlayerData')
 export class PlayerData {
 
-    public playerIno:IPLayerInfo = {money:0,level:1,iscollider:false,cameraPos:new Vec3(0.012,5.267,13.121),cameraRotation:-79,colliders:[]};
+    public playerIno:IPLayerInfo = {money:0,level:1,cameraPos:new Vec3(0.012,5.267,13.121),cameraRotation:-79};
+    public rigidbodys:Array<RigidBodyComponent>=[];
+    public iscollider:boolean=false;    
 
     static _instance:PlayerData = null;
     public static instance(){

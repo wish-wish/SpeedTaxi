@@ -80,9 +80,10 @@ export class GameCtrl extends Component {
         UIMgr.hideDialog(Constants.UIPage.resultUI);
         UIMgr.showDialog(Constants.UIPage.mainUI);        
         if(RunTimeData.instance().currProgress===RunTimeData.instance().maxProgress
-            ||RunTimeData.instance().playerData.playerIno.iscollider){
-            RunTimeData.instance().playerData.playerIno.iscollider=false;
-            RunTimeData.instance().playerData.playerIno.colliders=[];
+            ||RunTimeData.instance().playerData.iscollider)
+        {
+            RunTimeData.instance().playerData.iscollider=false;
+            RunTimeData.instance().playerData.rigidbodys=[];
             this.mapMgr.recycle();        
             this.unschedule(this.loadMap);
             this.scheduleOnce(this.loadMap,0.03);                        
@@ -91,7 +92,6 @@ export class GameCtrl extends Component {
         {            
             this.reset();
         }
-
     }
 
     private touchStart(touch:Touch,event:EventTouch)

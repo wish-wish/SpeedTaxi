@@ -392,16 +392,16 @@ export class Car extends Component {
         }
         var playinfo:IPLayerInfo;
         playinfo=RunTimeData.instance().playerData.playerIno;
-        playinfo.iscollider=true;
+        RunTimeData.instance().playerData.iscollider=true;
         playinfo.cameraPos=this.camera.position;
         playinfo.cameraRotation=this.camera.angle;
 
         const otherRigidbody=otherCollider.node.getComponent(RigidBodyComponent);
-        otherRigidbody.useGravity = true;
+        otherRigidbody.useGravity = false;
         otherRigidbody.applyForce(new Vec3(0,3000,-1500),new Vec3(0,0.5,0));
         
         var rigidbodys:Array<RigidBodyComponent>;
-        rigidbodys=RunTimeData.instance().playerData.playerIno.colliders;   
+        rigidbodys=RunTimeData.instance().playerData.rigidbodys;   
         if(rigidbodys===undefined)
             rigidbodys=[];     
         if(rigidbodys.indexOf(otherRigidbody)<0)//TODO:index of
@@ -411,14 +411,21 @@ export class Car extends Component {
         const collider=event.selfCollider;
         collider.addMask(Constants.CarGroup.NORMAL);
         const rigidBody = this.node.getComponent(RigidBodyComponent);
-        rigidBody.useGravity=true;
+        rigidBody.useGravity=false;
         if(rigidbodys.indexOf(rigidBody)<0)
         {
             rigidbodys.push(rigidBody);
         }
         this.runState = RunState.CRASH;
         AudioMgr.playSound(Constants.AudioFiles.CRASH);
+        RunTimeData.instance().interval=setInterval(this.delayGameOver,250);            
+    }
+
+    public delayGameOver()
+    {
         CustomEventListener.dispatchEvent(Constants.EventName.GAMEOVER);
+        clearInterval(RunTimeData.instance().interval);
+        RunTimeData.instance().interval=0;
     }
 
     public stopImmediately(){
@@ -428,9 +435,27 @@ export class Car extends Component {
 
     private resetPhysical(){
         const rigidBody = this.node.getComponent(RigidBodyComponent);
-        rigidBody.useGravity = false;
-        rigidBody.sleep();
-        rigidBody.wakeUp();
+        rigidBody.useGravity =false;
+        rigidBody?.sleep();
+        rigidBody?.clearState();
+        rigidBody?.clearForces();
+        rigidBody?.clearVelocity();
+        rigidBody?.wakeUp();
+        var rigidbodys:Array<RigidBodyComponent>;
+        rigidbodys=RunTimeData.instance().playerData.rigidbodys;
+        // if(rigidbodys===undefined)
+        // {}
+        // else
+        // {
+        //     for (RigidBodyComponent rb in rigidbodys) {
+        //         rb.useGravity=false;
+        //         rb?.sleep();
+        //         // rb?.clearState();
+        //         // rb?.clearForces();
+        //         // rb?.clearVelocity();
+        //         rb?.wakeUp();
+        //     }
+        // }        
     }
 
     start () {
