@@ -21,7 +21,7 @@ enum RunState{
 export class Car extends Component {
     
     @property
-    maxSpeed=0.2;
+    maxSpeed=0.6;
 
     @property
     minSpeed=0.002;
@@ -29,7 +29,7 @@ export class Car extends Component {
     private currRoadPoint:RoadPoint = null as any;
     private pointA = new Vec3();
     private pointB = new Vec3();
-    private currSpeed = 0.2;
+    private currSpeed = 0.4;
     private isMoving = false;
     private offset = new Vec3();
     private originRotation=0;
