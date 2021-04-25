@@ -35,7 +35,7 @@ export class RoadPoint extends Component {
             return true;//this.type !==ROAD_POINT_TYPE.END;
         }
     })
-    nextStation:Node = null;
+    nextStation:Node = null as any;
 
     @property({
         type:ROAD_MOVE_TYPE,
@@ -92,7 +92,7 @@ export class RoadPoint extends Component {
     cars = "201";
 
     private arrCars:string[]=[];
-    private cd:Function = null;
+    private cd:Function = null as any;
 
     public start () {
         this.arrCars=this.cars.split(',');

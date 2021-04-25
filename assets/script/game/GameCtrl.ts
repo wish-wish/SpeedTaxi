@@ -9,6 +9,7 @@ import { UIMgr } from '../ui/UIMgr';
 import { RunTimeData, PlayerData } from '../data/GameData';
 import { LoadingUI } from '../ui/LoadingUI';
 import { ConfigMgr } from '../data/ConfigMgr';
+import { PoolMgr } from '../data/PoolMgr';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameCtrl')
@@ -16,28 +17,28 @@ export class GameCtrl extends Component {
     @property({
         type:MapMgr,
     })
-    mapMgr:MapMgr = null;
+    mapMgr:MapMgr = null as any;
 
     @property({
         type:CarMgr,
     })
-    carMgr:CarMgr = null;
+    carMgr:CarMgr = null as any;
 
     @property({
         type:Node,
     })
-    group:Node = null;
+    group:Node = null as any;
 
     @property({
         type:LoadingUI
     })
-    LoadingUI:LoadingUI = null;
+    LoadingUI:LoadingUI = null as any;
 
 
     private progress=5;
     //private level=1;
 
-    private runTimeData:RunTimeData = null;
+    private runTimeData:RunTimeData = null  as any;
 
 
     public onLoad(){
@@ -47,8 +48,8 @@ export class GameCtrl extends Component {
         PlayerData.instance().loadFormCache();
         this.loadMap();
         const collider=this.group.getComponent(BoxColliderComponent);
-        collider.setGroup(Constants.CarGroup.NORMAL);
-        collider.setMask(-1);
+        collider?.setGroup(Constants.CarGroup.NORMAL);
+        collider?.setMask(-1);
         setDisplayStats(false);
     }
 
@@ -74,6 +75,7 @@ export class GameCtrl extends Component {
     public gameOver(){
         UIMgr.hideDialog(Constants.UIPage.gameUI);
         UIMgr.showDialog(Constants.UIPage.resultUI);
+        PoolMgr.clear();
     }
 
     public newLevel(){

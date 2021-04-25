@@ -26,7 +26,7 @@ export class Car extends Component {
     @property
     minSpeed=0.002;
 
-    private currRoadPoint:RoadPoint = null;
+    private currRoadPoint:RoadPoint = null as any;
     private pointA = new Vec3();
     private pointB = new Vec3();
     private currSpeed = 0.2;
@@ -39,10 +39,10 @@ export class Car extends Component {
     private acceleration=0.1;
     private isMainCar=false;
     private isBreaking=false;
-    private gas:ParticleSystemComponent=null;
-    private light:Node;
-    private moveOverCD:Function = null;
-    private camera:Node = null;
+    private gas:ParticleSystemComponent=null as any;
+    private light:Node=null as any;
+    private moveOverCD:Function = null as any;
+    private camera:Node = null as any;
     private toolingCoolTime=0;
     private _minSpeed = 0;
     private _maxSpeed = 0;
@@ -201,7 +201,7 @@ export class Car extends Component {
             return;
         }
         this.pointA.set(this.pointB);
-        this.currRoadPoint = this.currRoadPoint.nextStation.getComponent(RoadPoint);
+        this.currRoadPoint = this.currRoadPoint.nextStation.getComponent(RoadPoint) as any;
         if(this.currRoadPoint.nextStation){
             this.pointB.set(this.currRoadPoint.nextStation.worldPosition);
             if(this.currRoadPoint.type!==RoadPoint.RoadPointType.END){
@@ -267,7 +267,7 @@ export class Car extends Component {
                 this.currSpeed=this._minSpeed;
                 if(this.moveOverCD){
                     this.moveOverCD(this);
-                    this.moveOverCD=null;
+                    this.moveOverCD=null as any;
                 }
             }
         }
@@ -317,7 +317,7 @@ export class Car extends Component {
         this.node.setWorldPosition(entry.worldPosition);
         this.isMainCar=isMain;
         
-        this.currRoadPoint=entry.getComponent(RoadPoint);
+        this.currRoadPoint=entry.getComponent(RoadPoint) as any;
         if(this.currRoadPoint===null)
         {
             console.warn("There is no RoadPoint in "+entry.name);
@@ -356,21 +356,21 @@ export class Car extends Component {
 
         if(this.isMainCar){
             const gasNode=this.node.getChildByName('gas');
-            this.gas = gasNode.getComponent(ParticleSystemComponent);
+            this.gas = gasNode?.getComponent(ParticleSystemComponent)  as any;
             if(this.gas){
                 this.gas.stop();
             }
-            this.light = this.node.getChildByName('light');
+            this.light = this.node.getChildByName('light') as any;
             if(this.light){
                 this.light.active=false;
             }
-            collider.on('onCollisionEnter',this.onCollisionEnter,this)
-            collider.setGroup(Constants.CarGroup.MAINCAR);
-            collider.setMask(Constants.CarGroup.OTHERCAR);
+            collider?.on('onCollisionEnter',this.onCollisionEnter,this)
+            collider?.setGroup(Constants.CarGroup.MAINCAR);
+            collider?.setMask(Constants.CarGroup.OTHERCAR);
         }else
         {
-            collider.setGroup(Constants.CarGroup.OTHERCAR);
-            collider.setMask(-1);//所有组都检测-1,所有组都不检测0
+            collider?.setGroup(Constants.CarGroup.OTHERCAR);
+            collider?.setMask(-1);//所有组都检测-1,所有组都不检测0
         }
         this.resetPhysical();
     }
@@ -397,24 +397,24 @@ export class Car extends Component {
         playinfo.cameraRotation=this.camera.angle;
 
         const otherRigidbody=otherCollider.node.getComponent(RigidBodyComponent);
-        otherRigidbody.useGravity = false;
-        otherRigidbody.applyForce(new Vec3(0,3000,-1500),new Vec3(0,0.5,0));
+        (otherRigidbody as any).useGravity = true;
+        otherRigidbody?.applyForce(new Vec3(0,3000,-1500),new Vec3(0,0.5,0));
         
         var rigidbodys:Array<RigidBodyComponent>;
         rigidbodys=RunTimeData.instance().playerData.rigidbodys;   
         if(rigidbodys===undefined)
             rigidbodys=[];     
-        if(rigidbodys.indexOf(otherRigidbody)<0)//TODO:index of
+        if(rigidbodys.indexOf(otherRigidbody as any)<0)//TODO:index of
         {
-            rigidbodys.push(otherRigidbody);
+            rigidbodys.push(otherRigidbody as any);
         }
         const collider=event.selfCollider;
         collider.addMask(Constants.CarGroup.NORMAL);
         const rigidBody = this.node.getComponent(RigidBodyComponent);
-        rigidBody.useGravity=false;
-        if(rigidbodys.indexOf(rigidBody)<0)
+        (rigidBody as any).useGravity=true;
+        if(rigidbodys.indexOf(rigidBody as any)<0)
         {
-            rigidbodys.push(rigidBody);
+            rigidbodys.push(rigidBody as any);
         }
         this.runState = RunState.CRASH;
         AudioMgr.playSound(Constants.AudioFiles.CRASH);
@@ -435,7 +435,7 @@ export class Car extends Component {
 
     private resetPhysical(){
         const rigidBody = this.node.getComponent(RigidBodyComponent);
-        rigidBody.useGravity =false;
+        (rigidBody as any).useGravity =false;
         rigidBody?.sleep();
         rigidBody?.clearState();
         rigidBody?.clearForces();

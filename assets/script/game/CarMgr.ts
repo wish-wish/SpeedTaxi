@@ -57,10 +57,12 @@ export class CarMgr extends Component {
         if(isRunning){
             CustomEventListener.dispatchEvent(Constants.EventName.SHOWGUIDE,false);
             this.mainCar.startRunning();
-        }else
+        }
+        else
         {
             this.mainCar.stopRunning();
         }
+        console.log("controlMoving:"+isRunning);
     }
 
     private startSchedule(){
@@ -96,7 +98,7 @@ export class CarMgr extends Component {
                 console.warn(err);
                 return;
             }
-            const car = PoolMgr.getNode(prefab,self.node);
+            const car = PoolMgr.newNode(prefab,self.node);                        
             const carComp=car.getComponent(Car);
             this.aiCars.push(carComp);
             carComp.setEntry(road.node);

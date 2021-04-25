@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, EventType, Vec3, AnimationComponent } from 'cc';
+import { _decorator, Component, Node, Vec3, AnimationComponent } from 'cc';
 import { CustomEventListener } from '../data/CustomEventListener';
 import { Constants } from '../data/Constants';
 import { AudioMgr } from './AudioMgr';
@@ -18,7 +18,7 @@ export class CustomerMgr extends Component {
     @property
     walkTime=1;
 
-    private currCustomer:Node = null;
+    private currCustomer:Node = null as any;
     private startPos=new Vec3();
     private endPos=new Vec3();
     private InTheOrder=false;
@@ -46,7 +46,7 @@ export class CustomerMgr extends Component {
                 this.currCustomer.active=false;
                 if(this.state===Constants.CustomerState.GOODBYE)
                 {
-                    this.currCustomer = null;
+                    this.currCustomer = null as any;
                 }
                 if(this.state==Constants.CustomerState.GREETING)
                 {
@@ -92,7 +92,7 @@ export class CustomerMgr extends Component {
         }    
         
         const animComp = this.currCustomer.getComponent(AnimationComponent);
-        animComp.play("walk");
+        animComp?.play("walk");
 
         CustomEventListener.dispatchEvent(Constants.EventName.SHOWTALK,cusidx);
         AudioMgr.playSound(Constants.AudioFiles.NEWORDER);
@@ -131,7 +131,7 @@ export class CustomerMgr extends Component {
         }    
         
         const animComp = this.currCustomer.getComponent(AnimationComponent);
-        animComp.play("walk");
+        animComp?.play("walk");
 
         AudioMgr.playSound(Constants.AudioFiles.GETMONEY);
         CustomEventListener.dispatchEvent(Constants.EventName.SHOWTALK,this.customerID);

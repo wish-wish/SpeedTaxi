@@ -10,37 +10,37 @@ export class GameUI extends Component {
         type:LabelComponent,
         displayOrder:1,
     })
-    targetLevel:LabelComponent = null;
+    targetLevel:LabelComponent = null as any;
 
     @property({
         type:LabelComponent,
         displayOrder:2,
     })
-    srcLevel:LabelComponent = null;
+    srcLevel:LabelComponent = null as any;
 
     @property({
         type:SpriteComponent,
         displayOrder:3,
     })
-    targetSP:SpriteComponent = null;
+    targetSP:SpriteComponent = null as any;
 
     @property({
         type:SpriteComponent,
         displayOrder:4,
     })
-    srcSP:SpriteComponent = null;
+    srcSP:SpriteComponent = null as any;
 
     @property({
         type:SpriteFrame,
         displayOrder:5,
     })
-    LevelFinished:SpriteFrame = null;
+    LevelFinished:SpriteFrame = null as any;
 
     @property({
         type:SpriteFrame,
         displayOrder:6,
     })
-    LevelUnFinished:SpriteFrame = null;
+    LevelUnFinished:SpriteFrame = null as any;
 
     @property({
         type:[SpriteComponent],
@@ -52,43 +52,43 @@ export class GameUI extends Component {
         type:SpriteFrame,
         displayOrder:8,
     })
-    progress1:SpriteFrame = null;
+    progress1:SpriteFrame = null as any;
 
     @property({
         type:SpriteFrame,
         displayOrder:9,
     })
-    progress2:SpriteFrame = null;
+    progress2:SpriteFrame = null as any;
 
     @property({
         type:SpriteFrame,
         displayOrder:10,
     })
-    progress3:SpriteFrame = null;
+    progress3:SpriteFrame = null as any;
 
     @property({
         type:SpriteComponent,
         displayOrder:11,
     })
-    avatar:SpriteComponent = null;
+    avatar:SpriteComponent = null as any;
 
     @property({
         type:LabelComponent,
         displayOrder:12,
     })
-    content:LabelComponent = null;
+    content:LabelComponent = null as any;
 
     @property({
         type:Node,
         displayOrder:13,
     })
-    talkNode:Node = null;
+    talkNode:Node = null as any;
 
     @property({
         type:Node,
         displayOrder:14,
     })
-    guideNode:Node = null;
+    guideNode:Node = null as any;
 
     private runtimeData=null;
 
@@ -98,24 +98,23 @@ export class GameUI extends Component {
         CustomEventListener.on(Constants.EventName.SHOWTALK,this.talking,this);
         CustomEventListener.on(Constants.EventName.SHOWGUIDE,this.showGuide,this);
 
-        this.runtimeData = RunTimeData.instance();
         this.refreshUI();
         this.showGuide(true);
     }
 
     private greeting(){
-        const p=this.progress[this.runtimeData.maxProgress-1-this.runtimeData.currProgress];
+        const p=this.progress[RunTimeData.instance().maxProgress-1-RunTimeData.instance().currProgress];
         if(p){
             p.spriteFrame = this.progress2;
         }
     }
 
     private taking(){
-        const p=this.progress[this.runtimeData.maxProgress-this.runtimeData.currProgress];
+        const p=this.progress[RunTimeData.instance().maxProgress-RunTimeData.instance().currProgress];
         if(p){
             p.spriteFrame = this.progress1;    
         }
-        if(this.runtimeData.maxProgress===this.runtimeData.currProgress){
+        if(RunTimeData.instance().maxProgress===RunTimeData.instance().currProgress){
             this.targetSP.spriteFrame = this.LevelFinished;
         }
     }
@@ -144,7 +143,7 @@ export class GameUI extends Component {
         this.guideNode.active = isShow;
         if(isShow){
             const animcomp=this.guideNode.getComponent(AnimationComponent);
-            animcomp.play("showguide");
+            animcomp?.play("showguide");
         }
     }
 
@@ -159,7 +158,7 @@ export class GameUI extends Component {
     {
         for(let i=0;i<this.progress.length;i++){
             const elem=this.progress[i];
-            if(i>=this.runtimeData.maxProgress){
+            if(i>=RunTimeData.instance().maxProgress){
                 elem.node.active = false;
             }else
             {
@@ -167,8 +166,8 @@ export class GameUI extends Component {
                 elem.spriteFrame = this.progress3;
             }
         }
-        this.srcLevel.string = `${this.runtimeData.currLevel}`;
-        this.targetLevel.string = `${this.runtimeData.currLevel+1}`;
+        this.srcLevel.string = `${RunTimeData.instance().currLevel}`;
+        this.targetLevel.string = `${RunTimeData.instance().currLevel+1}`;
         this.srcSP.spriteFrame = this.LevelFinished;
         this.targetSP.spriteFrame = this.LevelUnFinished;
     }

@@ -1,0 +1,11 @@
+1、chrome
+devtools://devtools/bundled/js_app.html?v8only=true&ws=192.168.3.18:6086/00010002-0003-4004-8005-000600070008
+
+2、Editor Window中必须选中Debug
+
+3、连接手机，确保手机电脑同一网络
+通过数据线连接
+
+4、点击as的绿三角
+直到成功安装apk后
+在chrome中点击Reconnect DevTools

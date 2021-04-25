@@ -5,8 +5,8 @@ const { ccclass, property } = _decorator;
 
 @ccclass('RunTimeData')
 export class RunTimeData {
-    public playerData:PlayerData = null;
-    static _instance:RunTimeData = null;
+    public playerData:PlayerData = null as any;
+    static _instance:RunTimeData = null as any;
     public static instance(){
         if(!this._instance){
             this._instance = new RunTimeData();
@@ -45,7 +45,8 @@ export class PlayerData {
     public rigidbodys:Array<RigidBodyComponent>=[];
     public iscollider:boolean=false;    
 
-    static _instance:PlayerData = null;
+    static _instance:PlayerData;
+
     public static instance(){
         if(!this._instance){
             this._instance = new PlayerData();
