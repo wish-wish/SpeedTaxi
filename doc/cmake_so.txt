@@ -1,0 +1,27 @@
+1、cmake过大1
+用cmake替代ndk-build编译so库，编译出来的so库打出很多，ndk-build编译的500k左右，cmake编译出的达到5M；
+解决方法：CMakeLists.txt中加入如下设置：
+ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -s" )
+ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -s" )
+然后重新build一下就好。
+
+2、cmake过大2
+在 CMakeLists.txt 文件中加入以下代码，可以减少 90% 以上的体积：
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Os -Wall -s")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Os -Wall -s")
+
+
+3、gcc编译过大
+过大第一个原因是包含了符号表，这个可以通过strip删除，文件大小会立即缩水。strip命令提供了不同参数，方便可选择的删除。
+除此之外，两个编译参数“-ffunction-sections”和“-fdata-sections”，以及链接参数“-Wl,--gc-sections”可用来删除没有使用到的符号，“-Wl,”表示后面是传递给链接器ld的参数。
+objcopy也可用来删除一些未用的数据。
+
+相关的：
+-Wl,--version-script=export.lds
+__attribute__ ((visibility ("hidden")))
+readelf -s
+readelf -S
+
+gcc屏蔽“unused warn”，使用“__attribute__((unused))”，如：
+static int __attribute__((unused)) my_function();
+注意应用在函数声明，而不是定义处，如果有声明的话。

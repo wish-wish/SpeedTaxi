@@ -9,3 +9,11 @@ devtools://devtools/bundled/js_app.html?v8only=true&ws=192.168.3.18:6086/0001000
 4、点击as的绿三角
 直到成功安装apk后
 在chrome中点击Reconnect DevTools
+
+https://www.cnblogs.com/gamedaybyday/p/13576629.html
+
+ps：cmd apk generate
+gradlew assembleRelease   release
+gradlew assembleDebug    debug
+gradlew assemble  all
+
