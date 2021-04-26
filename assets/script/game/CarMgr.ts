@@ -13,12 +13,12 @@ export class CarMgr extends Component {
     @property({
         type:Car,
     })
-    mainCar:Car = null;
+    mainCar:Car = null as any;
 
     @property({
         type:Node,
     })
-    camera:Node = null;
+    camera:Node = null as any;
 
     @property
     cameraPos=new Vec3(0.012,5.267,13.121);
@@ -71,8 +71,8 @@ export class CarMgr extends Component {
             //console.log(node.name+":"+this.currPath.length);
             if(node.components!==null){
                 const roadPoint = node.getComponent(RoadPoint);
-                roadPoint.stopSchedule();
-                roadPoint.startSchedule(this.createEnemy.bind(this));
+                roadPoint?.stopSchedule();
+                roadPoint?.startSchedule(this.createEnemy.bind(this));
             }
             else
             {
@@ -86,7 +86,7 @@ export class CarMgr extends Component {
             const node=this.currPath[i];
             if(node.components!==null){
                 const roadPoint = node.getComponent(RoadPoint);
-                roadPoint.stopSchedule(); 
+                roadPoint?.stopSchedule(); 
             }
         }
     }
@@ -100,11 +100,11 @@ export class CarMgr extends Component {
             }
             const car = PoolMgr.newNode(prefab,self.node);                        
             const carComp=car.getComponent(Car);
-            this.aiCars.push(carComp);
-            carComp.setEntry(road.node);
-            carComp.maxSpeed = road.speed;
-            carComp.startRunning();
-            carComp.moveAfterFinished(this.recycleAICar.bind(this));
+            this.aiCars.push(carComp as any);
+            carComp?.setEntry(road.node);
+            carComp!.maxSpeed = road.speed;
+            carComp?.startRunning();
+            carComp?.moveAfterFinished(this.recycleAICar.bind(this));
         });
     }
 

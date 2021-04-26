@@ -50,10 +50,10 @@
         "_value": true
       },
       "video": {
-        "_value": false
+        "_value": true
       },
       "webview": {
-        "_value": false
+        "_value": true
       },
       "tween": {
         "_value": true
@@ -75,14 +75,16 @@
       "base",
       "gfx-webgl",
       "gfx-webgl2",
+      "audio",
+      "video",
+      "webview",
+      "tween",
       "3d",
-      "2d",
-      "ui",
       "particle",
       "physics-cannon",
-      "intersection-2d",
-      "audio",
-      "tween"
+      "2d",
+      "ui",
+      "intersection-2d"
     ],
     "noDeprecatedFeatures": {
       "value": false,
