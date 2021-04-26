@@ -9,7 +9,7 @@ export class LoadingUI extends Component {
     @property({
         type:UpdateLabelValue
     })
-    progressLabel:UpdateLabelValue = null;
+    progressLabel:UpdateLabelValue = null as any;
 
 
     private progress=0;

@@ -10,37 +10,37 @@ export class ResultUI extends Component {
         type:LabelComponent,
         displayOrder:1,
     })
-    targetLevel:LabelComponent = null;
+    targetLevel:LabelComponent = null as any;
 
     @property({
         type:LabelComponent,
         displayOrder:2,
     })
-    srcLevel:LabelComponent = null;
+    srcLevel:LabelComponent = null as any;
 
     @property({
         type:SpriteComponent,
         displayOrder:3,
     })
-    targetSP:SpriteComponent = null;
+    targetSP:SpriteComponent = null as any;
 
     @property({
         type:SpriteComponent,
         displayOrder:4,
     })
-    srcSP:SpriteComponent = null;
+    srcSP:SpriteComponent = null as any;
 
     @property({
         type:SpriteFrame,
         displayOrder:5,
     })
-    LevelFinished:SpriteFrame = null;
+    LevelFinished:SpriteFrame = null as any;
 
     @property({
         type:SpriteFrame,
         displayOrder:6,
     })
-    LevelUnFinished:SpriteFrame = null;
+    LevelUnFinished:SpriteFrame = null as any;
 
     @property({
         type:[SpriteComponent],
@@ -52,31 +52,31 @@ export class ResultUI extends Component {
         type:SpriteFrame,
         displayOrder:8,
     })
-    progress1:SpriteFrame = null;
+    progress1:SpriteFrame = null as any;
 
     @property({
         type:SpriteFrame,
         displayOrder:9,
     })
-    progress2:SpriteFrame = null;
+    progress2:SpriteFrame = null as any;
 
     @property({
         type:SpriteFrame,
         displayOrder:10,
     })
-    progress3:SpriteFrame = null;
+    progress3:SpriteFrame = null as any;
 
     @property({
         type:LabelComponent,
         displayOrder:11,
     })
-    progressLabel:LabelComponent = null;
+    progressLabel:LabelComponent = null as any;
 
     @property({
         type:LabelComponent,
         displayOrder:12,
     })
-    moneyLabel:LabelComponent = null;
+    moneyLabel:LabelComponent = null as any;
 
 
     public show(){

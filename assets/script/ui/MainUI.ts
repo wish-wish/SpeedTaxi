@@ -10,7 +10,7 @@ export class MainUI extends Component {
     @property({
         type:LabelComponent
     })
-    moneyLabel:LabelComponent = null;
+    moneyLabel:LabelComponent = null as any;
 
     private clickTime = 0;
     private time = 0;

@@ -11,8 +11,8 @@ export class UIMgr {
         if(this.dictPanel.has(name)){
             const panel = this.dictPanel.get(name);
             const parent = find('Canvas');
-            panel.parent = parent;
-            const comp = panel.getComponent(scriptName);
+            panel!.parent = parent;
+            const comp = panel!.getComponent(scriptName);
             if(comp && comp["show"]){
                 comp['show'].apply(comp,args);
             }
@@ -45,9 +45,9 @@ export class UIMgr {
     public static hideDialog(name:string,cb?:Function){
         if(this.dictPanel.has(name)){
             const panel=this.dictPanel.get(name);
-            panel.parent=null;
+            panel!.parent=null;
             const scriptName=name.substr(0,1).toUpperCase()+name.substr(1);
-            const comp = panel.getComponent(scriptName);
+            const comp = panel!.getComponent(scriptName);
             if(comp && comp["hide"]){
                 comp['hide'].apply(comp);
             }
