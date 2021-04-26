@@ -1,0 +1,24 @@
+1、TypeScript需要向plotOptions添加索引签名，
+如：
+{} as {[key: string]: any}; // <-- note the cast here
+{ [key: string]: string } string
+
+const foo: {
+  [index: string]: { message: string };
+} = {};
+
+interface trainInfo {
+    name: keyof typeof plotOptions;
+    x: Array<number>;
+    y: Array<number>;
+    type: string;
+    mode: string;
+}
+
+2、
+http://www.mianshigee.com/tutorial/TypeScriptDeepDiveZH/0.md
+
+3、jsx
+
+4、babel
+https://www.babeljs.cn/docs/index.html

@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+build/
+library/
+local/
+native/
+profiles/
+temp/
+
+*.meta
