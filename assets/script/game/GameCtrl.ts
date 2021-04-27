@@ -139,7 +139,7 @@ export class GameCtrl extends Component {
                 console.warn(err);
                 return;
             };
-            const mapNode=instantiate(prefab) as Node;
+            const mapNode=instantiate(prefab) as Node;            
             mapNode.parent = this.mapMgr.node;
             // if(cb){
             //     cb();

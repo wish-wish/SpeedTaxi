@@ -12,7 +12,7 @@
         "_value": true
       },
       "gfx-webgl2": {
-        "_value": true
+        "_value": false
       },
       "3d": {
         "_value": true
@@ -28,7 +28,7 @@
       },
       "physics": {
         "_value": true,
-        "_option": "physics-cannon"
+        "_option": "physics-ammo"
       },
       "physics-2d": {
         "_value": false,
@@ -74,18 +74,17 @@
     "includeModules": [
       "base",
       "gfx-webgl",
-      "gfx-webgl2",
+      "3d",
+      "2d",
+      "ui",
+      "particle",
+      "physics-ammo",
+      "intersection-2d",
       "profiler",
       "audio",
       "video",
       "webview",
-      "tween",
-      "3d",
-      "particle",
-      "physics-cannon",
-      "2d",
-      "ui",
-      "intersection-2d"
+      "tween"
     ],
     "noDeprecatedFeatures": {
       "value": false,
@@ -93,6 +92,7 @@
     }
   },
   "macroConfig": {
-    "ENABLE_TILEDMAP_CULLING": false
+    "ENABLE_TILEDMAP_CULLING": false,
+    "ENABLE_TRANSPARENT_CANVAS": true
   }
 }

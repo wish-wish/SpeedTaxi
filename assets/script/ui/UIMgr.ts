@@ -21,7 +21,14 @@ export class UIMgr {
             }
             return;
         }
-        const path = `ui/${name}`;        
+        const path = `ui/${name}`;                
+        
+        //TODO:释放资源
+        //assetManager.dependUtil.getDepsRecursively();
+        //resources.release();
+        //resources.releaseAll();
+        //resources.releaseUnusedAssets();
+
         //loader.loadRes(path,Prefab,(err:any,prefab:Prefab)=>{
         resources.load(path,Prefab,(err:any,prefab:Prefab)=>{
             if(err){

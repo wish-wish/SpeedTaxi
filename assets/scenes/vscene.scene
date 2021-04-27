@@ -28,11 +28,11 @@
     "_active": true,
     "_components": [],
     "_prefab": null,
-    "autoReleaseAssets": false,
+    "autoReleaseAssets": true,
     "_globals": {
       "__id__": 21
     },
-    "_id": "92931f6b-5174-49f5-9c70-04810d7e3bf5"
+    "_id": "55de83a8-4cad-489e-8e3b-a1b173ae97db"
   },
   {
     "__type__": "cc.Node",
@@ -304,7 +304,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 320,
+    "_orthoHeight": 350.32917139614074,
     "_near": 1,
     "_far": 2000,
     "_color": {

@@ -27,7 +27,7 @@ export class MapMgr extends Component {
 
     start () {
         // Your initialization goes here.
-    }
+    }    
 
     // update (deltaTime: number) {
     //     // Your update function goes here.

@@ -45,11 +45,11 @@
     "_prefab": {
       "__id__": 256
     },
-    "autoReleaseAssets": false,
+    "autoReleaseAssets": true,
     "_globals": {
       "__id__": 269
     },
-    "_id": "1b5d7a2a-d431-42fb-9ab9-d72d34719a6e"
+    "_id": "59474339-a39d-4112-bf1f-60be3276103a"
   },
   {
     "__type__": "cc.Node",
@@ -240,7 +240,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 374.05405405405406,
+    "_orthoHeight": 584.6083995459704,
     "_near": 1,
     "_far": 2000,
     "_color": {
