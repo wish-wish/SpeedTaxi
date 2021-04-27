@@ -95,7 +95,7 @@ export class RoadPoint extends Component {
     private cd:Function = null as any;
 
     public start () {
-        this.arrCars=this.cars.split(',');
+        this.arrCars=this.cars.split(',');        
         // Your initialization goes here.
     }
 
