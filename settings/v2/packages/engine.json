@@ -41,7 +41,7 @@
         "_value": false
       },
       "profiler": {
-        "_value": false
+        "_value": true
       },
       "particle-2d": {
         "_value": false
@@ -75,6 +75,7 @@
       "base",
       "gfx-webgl",
       "gfx-webgl2",
+      "profiler",
       "audio",
       "video",
       "webview",
